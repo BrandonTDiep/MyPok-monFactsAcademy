@@ -1,5 +1,5 @@
 # My Pokemon Card Facts
-A website designed and developed to display facts about Pokemon Cards. 
+A website designed and developed to display facts about Pokemon Cards with Pokémon TCG API. 
 
 **Link to project:** https://mypokemoncardfacts.netlify.app/
 
