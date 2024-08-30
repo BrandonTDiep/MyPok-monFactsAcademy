@@ -1,9 +1,10 @@
 # My Pokemon Card Facts
 A website designed and developed to display facts about Pokemon Cards. 
 
-**Link to project:** https://mypokemonfactsacademy.netlify.app/
+**Link to project:** https://mypokemoncardfacts.netlify.app/
 
-![image](https://github.com/user-attachments/assets/f7eab752-7736-4230-9759-9ebb678b7cd6)
+![image](https://github.com/user-attachments/assets/4c470700-ac53-4c32-a34b-0fd6e4150fb0)
+
 
 
 
