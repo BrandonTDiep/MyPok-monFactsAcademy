@@ -1,5 +1,5 @@
 # My Pokemon Card Facts
-A website designed and developed to utilize NASA API APOD to get the astronomy picture of the day and its description. 
+A website designed and developed to display facts about Pokemon Cards. 
 
 **Link to project:** https://mypokemonfactsacademy.netlify.app/
 
