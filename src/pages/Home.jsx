@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // components
 import { Input } from "@/components/ui/input";
-import CharacterCard from "../components/CharacterCard";
+import PokemonCard from "../components/PokemonCard";
 import LoadingSpinner from '../components/LoadingSpinner'
 
 
@@ -52,7 +52,7 @@ const Home = () => {
       <ul>
         {pokemonData && pokemonData.map((pokemon) => (
           <li key={pokemon.id}>
-          <CharacterCard character={pokemon} />
+          <PokemonCard pokemon={pokemon} />
         </li>
         ))}
       </ul> 

@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 
-const CharacterCard = ({ character }) => {
+const PokemonCard = ({ pokemon }) => {
     const [showStats, setShowStats] = useState(false)
     
     return (
@@ -19,9 +19,9 @@ const CharacterCard = ({ character }) => {
             <div className='flex flex-col md:flex-row'>
                 <div className="w-full md:w-1/2 lg:w-1/4 h-auto overflow-hidden rounded-l-lg">
                     <img
-                        src={`${character.images.small}`}
+                        src={`${pokemon.images.small}`}
                         className="w-full h-auto object-cover object-bottom" 
-                        alt={`${character.name}'s picture`}
+                        alt={`${pokemon.name}'s picture`}
                     />
                 </div>
 
@@ -29,9 +29,9 @@ const CharacterCard = ({ character }) => {
                     <CardContent className="text-left p-0 pl-4">
                         <CardTitle className="text-lg font-semibold text-lg flex items-center justify-between flex-wrap">
                             <div>
-                                {character.name}
-                                {character.level && <span className='pl-2 text-xs'>LV.{character.level}</span>}
-                                <span className='px-2 text-xs'>HP.{character.hp}</span>
+                                {pokemon.name}
+                                {pokemon.level && <span className='pl-2 text-xs'>LV.{pokemon.level}</span>}
+                                <span className='px-2 text-xs'>HP.{pokemon.hp}</span>
                             </div>
                             
                             <Button variant="link" className='p-0 font-normal mr-4' onClick={() => setShowStats(!showStats)}>{showStats ? "Hide Prices" : "Show Prices"}
@@ -39,22 +39,22 @@ const CharacterCard = ({ character }) => {
                         </CardTitle>
                         {showStats ? 
                         (<CardDescription className='mt-3'>
-                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Average Sell Price:</span> ${character.cardmarket.prices.averageSellPrice}</p>
-                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Trend Price:</span> ${character.cardmarket.prices.trendPrice}</p>
-                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Low Price:</span> ${character.cardmarket.prices.lowPrice}</p>
+                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Average Sell Price:</span> ${pokemon.cardmarket.prices.averageSellPrice}</p>
+                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Trend Price:</span> ${pokemon.cardmarket.prices.trendPrice}</p>
+                            <p className="text-sm font-normal mb-1"><span className="font-medium mr-1">Low Price:</span> ${pokemon.cardmarket.prices.lowPrice}</p>
 
                         </CardDescription>
                         )
                         : 
                         (<CardDescription className='mt-3'>
-                            {character.abilities && character.abilities.map((ability, index) => (
+                            {pokemon.abilities && pokemon.abilities.map((ability, index) => (
                                 <div key={index} className='mb-3'>
                                     <h3 className='text-xs lg:text-sm'><span className="font-medium">Ability: </span>{ability.name}</h3>
                                     <p className='text-xs lg:text-sm'>{ability.text}</p>
                                 </div>
                             ))}
 
-                            {character.attacks && character.attacks.map((attack, index) => (
+                            {pokemon.attacks && pokemon.attacks.map((attack, index) => (
                                 <div key={index} className='mb-3'>
                                     <h3 className='text-xs lg:text-sm'><span className="font-medium">Attack: </span>{attack.name} {attack.damage}</h3>
                                     <p className='text-xs lg:text-sm'><span className="font-medium">Cost: </span> {attack.cost.join(', ')}</p>
@@ -70,4 +70,4 @@ const CharacterCard = ({ character }) => {
     )
 }
 
-export default CharacterCard
+export default PokemonCard
