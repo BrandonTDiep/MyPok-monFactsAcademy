@@ -35,7 +35,7 @@ const Home = () => {
   return (
 
     <div className="bg-white p-5 rounded-lg">
-      <h1 className="text-center md:text-left ml-1 mb-1">Find your pokémon</h1>
+      <h1 className="text-center md:text-left ml-1 mb-1">Find your pokémon card</h1>
       {!loading && 
         <form onSubmit={handleSearch} id='pokeSearch'>
           <Input
