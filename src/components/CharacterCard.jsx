@@ -15,7 +15,7 @@ const CharacterCard = ({ character }) => {
     const [showStats, setShowStats] = useState(false)
     
     return (
-        <Card className="hover:shadow-lg my-5 bg-gray-100 hover:border-black transition-colors duration-500">
+        <Card className="hover:shadow-lg my-8 bg-gray-100 hover:border-black transition-colors duration-500">
             <div className='flex flex-col md:flex-row'>
                 <div className="w-full md:w-1/2 lg:w-1/4 h-auto overflow-hidden rounded-l-lg">
                     <img
