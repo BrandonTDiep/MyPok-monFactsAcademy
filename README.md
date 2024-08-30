@@ -1,8 +1,24 @@
-# React + Vite
+# My Pokemon Card Facts
+A website designed and developed to utilize NASA API APOD to get the astronomy picture of the day and its description. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Link to project:** https://mypokemonfactsacademy.netlify.app/
 
-Currently, two official plugins are available:
+![image](https://github.com/user-attachments/assets/f7eab752-7736-4230-9759-9ebb678b7cd6)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## How It's Made:
+
+**Tech used:** 
+- React
+- Tailwind CS
+- shadcn/ui
+
+## Installation :
+
+1. Clone the repository. (https://github.com/BrandonTDiep/MyPokemonCardFacts.git)
+2. Navigate to the project directory.
+3. Install the dependencies. (npm install)
+4. npm run dev.
+   
+
