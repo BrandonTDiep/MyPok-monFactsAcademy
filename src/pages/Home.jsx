@@ -1,0 +1,67 @@
+import { useState } from 'react'
+import axios from 'axios'
+
+// components
+import { Input } from "@/components/ui/input";
+import CharacterCard from "../components/CharacterCard";
+import LoadingSpinner from '../components/LoadingSpinner'
+
+
+const Home = () => {
+  const [query, setQuery] = useState('')
+  const [pokemonData, setPokemonData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+
+
+  const handleSearch = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
+
+    try{
+      const response = await axios.get(`https://api.pokemontcg.io/v2/cards?q=name:${query}`);
+      setPokemonData(response.data.data[0])
+      setQuery("")
+    }
+    catch (err){
+      setError("Character not found.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+
+  return (
+
+    <div className="bg-white p-5 rounded-lg">
+      <h1 className="text-center md:text-left ml-1 mb-1">Find your pokémon</h1>
+      {!loading && 
+        <form onSubmit={handleSearch} id='pokeSearch'>
+          <Input
+            type="search"
+            id='pokeSearch'
+            placeholder="Search..."
+            className="pl-5 sm:w-[400px] md:w-[400px]"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+      </form>}
+
+      {!loading ? 
+      <ul>
+        {pokemonData && 
+          <li key={pokemonData.id}>
+            <CharacterCard character={pokemonData} />
+          </li>
+        }
+      </ul> 
+      :
+      <LoadingSpinner />
+      }
+    </div>
+
+  )
+}
+
+export default Home
