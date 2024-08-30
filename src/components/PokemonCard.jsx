@@ -9,6 +9,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getColor } from "@/utils/color"
 
 
 const PokemonCard = ({ pokemon }) => {
@@ -31,7 +32,7 @@ const PokemonCard = ({ pokemon }) => {
                         {/* Card Title */}
                         <CardTitle className="text-lg font-semibold text-lg flex items-center justify-between flex-wrap">
                             <div>
-                                {pokemon.name}
+                                <span className={getColor(pokemon.types[0])}>{pokemon.name}</span>
                                 {pokemon.level && <span className='pl-2 text-xs'>LV.{pokemon.level}</span>}
                                 <span className='px-2 text-xs'>HP.{pokemon.hp}</span>
                             </div>
@@ -39,6 +40,14 @@ const PokemonCard = ({ pokemon }) => {
                             <Button variant="link" className='p-0 font-normal mr-4' onClick={() => setShowStats(!showStats)}>{showStats ? "Hide Prices" : "Show Prices"}
                             </Button>
                         </CardTitle>
+                        
+                        <span className='text-xs'>Type: </span>
+                        {pokemon.types.map((element, index) => (
+                            <span key={index} className={`text-xs ${getColor(element)}`}>
+                                {element}
+                                {index < pokemon.types.length - 1 && ', '}
+                            </span>
+                        ))}
 
                         {/* Card Description */}
                         {showStats ? 
@@ -79,7 +88,12 @@ const PokemonCard = ({ pokemon }) => {
 
                                     <p className='text-xs lg:text-sm'>
                                         <span className="font-medium mr-1">Cost: </span> 
-                                        {attack.cost.join(', ')}
+                                        {attack.cost.map((element, index) => (
+                                            <span key={index} className={getColor(element)}>
+                                                {element}
+                                                {index < attack.cost.length - 1 && ', '}
+                                            </span>
+                                        ))}
                                     </p>
 
                                     {attack.text && 
